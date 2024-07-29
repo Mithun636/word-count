@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div class="box">
+        <h1>Real-Time Character Counter</h1>
+        <textarea type="text" id="txt" class="txt" cols="10" placeholder="Please Write your text here..."></textarea> 
+        <div class="count">
+        <h3>Total Character:<span id="total">0</span></h3>
+        <h3>Remaining:<span id="remain">50</span></h3>
+    </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var remai=50;
+             $("#txt").on('input',function(){
+              var total=$(this).val().length;
+              var remain=remai-total;
+              if(total>50){
+                window.alert("You reaced the Limit")
+                window.close();
+              }
+              $("#total").text(total);
+              $("#remain").text(remain);
+
+        });
+        });
+    </script>
+</body>
+</html>
